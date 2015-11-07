@@ -10,5 +10,5 @@ killall -QUIT uwsgi
 sleep 1
 
 # start
-uwsgi -x /home/tongtianqi/tongtianqi/uwsgi.xml
-nginx -c /home/tongtianqi/tongtianqi/nginx.conf
+uwsgi -x /home/tongtianqi/uwsgi.xml
+nginx -c /home/tongtianqi/nginx.conf
