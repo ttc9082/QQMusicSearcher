@@ -1,0 +1,8 @@
+Django
+argparse
+pillow
+requests
+qrcode
+pycrypto
+MySQL-python
+BeautifulSoup4
