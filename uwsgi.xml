@@ -6,7 +6,7 @@
     <buffer-size>4096</buffer-size>
     <max-requests>5000</max-requests>
     <chdir>/home/tongtianqi/</chdir>
-    <pythonpath>/root/.virtualenvs/tongtianqi.com/bin/</pythonpath>
+    <pythonpath>/root/.virtualenvs/tongtianqi.com/bin/python</pythonpath>
     <module>tongtianqi.wsgi</module>
     <daemonize>/var/log/uwsgi/uwsgi.log</daemonize>
 </uwsgi>
