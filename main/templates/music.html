@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load staticfiles cache %}
+
+{% block title %}
+    Music
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/libs/odometer-theme-default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pages/music.css' %}">
+{%  endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="input-group" id="search-box">
+                      <input type="text" class="form-control" name="name" placeholder="Search for...">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">搜索</button>
+                      </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% if totalnum %}
+        <div class="row">
+            <div class="col-md-12">
+                <p>{{ totalnum }} 个结果。</p>
+                <table class="table table-striped">
+                  <tr>
+                      <td>名称</td>
+                      <td>歌手</td>
+                      <td>专辑</td>
+                      <td>听</td>
+                  </tr>
+                  {% for song in list %}
+                  <tr>
+                      <td>{{ song.songname }}</td>
+                      <td>{{ song.singername }}</td>
+                      <td>{{ song.albumname }}</td>
+                      <td>
+                          <button type="button" class="btn btn-default play" data-toggle="buttons"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+                          <button type="button" class="btn btn-default pause" data-toggle="buttons"><span class="glyphicon glyphicon-pause pause" aria-hidden="true"></span></button>
+                          <audio src="{{ song.m4a }}"></audio>
+                      </td>
+                  </tr>
+                  {% endfor %}
+                </table>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        $(function(){
+            $('.play').on('click', function(e){
+                $(e.currentTarget).parent().parent().addClass('success');
+                $(e.currentTarget).parent().find('audio').get(0).play();
+            });
+            $('.pause').on('click', function(e){
+                $(e.currentTarget).parent().parent().removeClass('success');
+                $(e.currentTarget).parent().find('audio').get(0).pause();
+            });
+        })
+    </script>
+{% endblock %}

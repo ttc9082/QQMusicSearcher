@@ -1,0 +1,66 @@
+{% load staticfiles %}
+{% load cache %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/libs/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/libs/messenger.css' %}" rel="stylesheet">
+    <link href="{% static 'css/libs/messenger-theme-air.css' %}" rel="stylesheet">
+{% block style %}
+{% endblock %}
+</head>
+
+<body>
+{% block body %}
+
+{% endblock %}
+
+
+<script src="{% static 'js/libs/jquery-1.11.2.min.js' %}"></script>
+<script src="{% static 'js/libs/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/libs/messenger.min.js' %}"></script>
+<script src="{% static 'js/libs/messenger-theme-future.js' %}"></script>
+
+<!-- 弹窗通知 messager -->
+<script>
+Messenger.options = {
+    extraClasses: 'messenger-fixed messenger-on-top',
+    theme: 'air'
+};
+{% for message in messages %}
+Messenger().post({
+    message: '{{ message }}',
+    {% if message.level_tag %}type: '{{ message.level_tag }}',{% endif %}
+    showCloseButton: true,
+    hideAfter: 0,
+    {% if 'tobind' in message.extra_tags %}
+    actions: {
+        retry: {
+          label: '去绑定',
+          action: function() {
+                location.href = '{% url 'kbj_manage:bind center' %}'
+          }
+        },
+        cancel: {
+          label: '知道了，先不绑定',
+          action: function() {
+            return this.cancel();
+          }
+        }
+    }
+    {% endif %}
+});
+
+{% endfor %}
+</script>
+
+{% block js %}
+{% endblock %}
+</body>
+</html>
