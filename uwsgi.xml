@@ -5,7 +5,7 @@
     <processes>20</processes>
     <buffer-size>4096</buffer-size>
     <max-requests>5000</max-requests>
-    <chdir>/home/tong28/ddw</chdir>
+    <chdir>/home/tongtianqi/tongtianqi</chdir>
     <pythonpath>..</pythonpath>
     <module>tongtianqi.wsgi</module>
     <daemonize>/var/log/uwsgi/uwsgi.log</daemonize>
