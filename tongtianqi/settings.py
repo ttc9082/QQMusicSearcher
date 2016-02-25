@@ -42,7 +42,7 @@ LOGGING = {
         'file':{
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(os.getenv('TEMP') if (os.name == 'nt') else '/var/log/tongtianqi','tongtianqi.log'),
+            'filename': os.path.join(os.getenv('TEMP') if (os.name == 'nt') else '/var/log/qmusic/','qmusic.log'),
             'maxBytes': 1024*1024*20,
             'backupCount': 20,
             'formatter': 'verbose'
