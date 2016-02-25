@@ -10,5 +10,5 @@ killall -QUIT uwsgi
 sleep 1
 
 # start
-uwsgi -x /home/tongtianqi/uwsgi.xml
-nginx -c /home/tongtianqi/nginx.conf
+uwsgi -x /www/QQMusicSearcher/uwsgi.xml
+nginx -c /www/QQMusicSearcher/nginx.conf
