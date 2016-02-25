@@ -5,9 +5,9 @@
     <processes>20</processes>
     <buffer-size>4096</buffer-size>
     <max-requests>5000</max-requests>
-    <chdir>/home/tongtianqi/</chdir>
-    <home>/root/.virtualenvs/tongtianqi.com/</home>
-    <virtualenv>/root/.virtualenvs/tongtianqi.com/</virtualenv>
+    <chdir>/www/QQMusicSearcher/</chdir>
+{#    <home>/.virtualenvs/qmusic.tongtianqi.com/</home>#}
+    <virtualenv>/.virtualenvs/qmusic.tongtianqi.com/</virtualenv>
     <module>tongtianqi.wsgi</module>
-    <daemonize>/var/log/uwsgi/uwsgi.log</daemonize>
+    <daemonize>/var/log/uwsgi/qmusic/uwsgi.log</daemonize>
 </uwsgi>
