@@ -3,4 +3,5 @@ from django.contrib import admin
 
 urlpatterns = patterns('main.views',
     url(r'^music/$', 'music', name='music'),
+    url(r'^live/$', 'live', name='live'),
 )

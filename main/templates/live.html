@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>直播!!!!!</title>
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/de/prismplayer/1.3.8/skins/default/index-min.css">
+</head>
+<body>
+    <div id='J_prismPlayer' class='prism-player'></div>
+    <script src="//g.alicdn.com/de/prismplayer/1.3.8/prism-min.js"></script>
+    <script>
+        var player = new prismplayer({
+            id: "J_prismPlayer", // 容器id
+            source: "http://cloud.video.taobao.com/play/u/2554695624/p/1/e/6/t/1/fv/102/28552077.mp4",         // 视频url 支持互联网可直接访问的视频地址
+            autoplay: true,      // 自动播放
+            width: "100%",       // 播放器宽度
+            height: "400px",      // 播放器高度
+            skinLayout: [
+                {
+                    "align":"blabs",
+                    "x":0,
+                    "y":0,
+                    "name":"controlBar",
+                    "children":[
+                        {
+                            "align":"tlabs",
+                            "x":0,
+                            "y":0,
+                            "name":"progress"
+                        },{
+                            "align":"tl",
+                            "x":15,
+                            "y":26,
+                            "name":"playButton"
+                        },{
+                            "align":"tl",
+                            "x":10,
+                            "y":24,
+                            "name":"timeDisplay"
+                        },{
+                            "align":"tr",
+                            "x":20,
+                            "y":25,
+                            "name":"fullScreenButton"
+                        },{
+                            "align":"tr",
+                            "x":20,
+                            "y":25,
+                            "name":"setButton"
+                        },{
+                            "align":"tr",
+                            "x":20,
+                            "y":23,
+                            "name":"streamButton"
+                        },{
+                            "align":"tr",
+                            "x":20,
+                            "y":25,
+                            "name":"volume"
+                        }
+                    ]
+                },{
+                    "align":"tlabs",
+                    "x":0,
+                    "y":0,
+                    "name":"fullControlBar",
+                    "children":[
+                        {
+                            "align":"tl",
+                            "x":25,
+                            "y":6,
+                            "name":"fullTitle"
+                        },{
+                            "align":"tr",
+                            "x":24,
+                            "y":13,
+                            "name":"fullNormalScreenButton"
+                        },{
+                            "align":"tr",
+                            "x":10,
+                            "y":12,
+                            "name":"fullTimeDisplay"
+                        },{
+                            "align":"cc",
+                            "name":"fullZoom"
+                        }
+                    ]
+                }
+            ]
+        });
+    </script>
+</body>
+</html>

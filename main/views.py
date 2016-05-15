@@ -32,3 +32,6 @@ def music(request):
         """
         context = json_r
     return render(request, 'music.html', context)
+
+def live(request):
+    return render(request, 'live.html', {})
