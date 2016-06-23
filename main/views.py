@@ -47,3 +47,7 @@ def xss(request):
 
 def alert(request):
     return render(request, 'alert.html', {})
+
+
+def cross_domain(request):
+    return JsonResponse({'cd': 'success'})
