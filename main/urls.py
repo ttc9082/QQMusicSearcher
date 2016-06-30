@@ -7,4 +7,5 @@ urlpatterns = patterns('main.views',
     url(r'^xss/$', 'xss', name='xss'),
     url(r'^alert/$', 'alert', name='alert'),
     url(r'^cd/$', 'cross_domain', name='cross domain'),
+    url(r'^json/$', 'json_response', name='json'),
 )

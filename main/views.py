@@ -50,4 +50,8 @@ def alert(request):
 
 
 def cross_domain(request):
-    return JsonResponse({'cd': 'success'})
+    cb = request.GET.get('callback')
+    return HttpResponse(cb + '({"cd": "sss"})')
+
+def json_response(request):
+    return JsonResponse({})
