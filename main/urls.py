@@ -8,4 +8,5 @@ urlpatterns = patterns('main.views',
     url(r'^alert/$', 'alert', name='alert'),
     url(r'^cd/$', 'cross_domain', name='cross domain'),
     url(r'^json/$', 'json_response', name='json'),
+    url(r'^sohu/$', 'sohu', name='sohu'),
 )

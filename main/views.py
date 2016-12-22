@@ -49,6 +49,9 @@ def alert(request):
     return render(request, 'alert.html', {})
 
 
+def sohu(request):
+    return render(request, 'sohu.html', {})
+
 def cross_domain(request):
     cb = request.GET.get('callback')
     return HttpResponse(cb + '({"cd": "sss"})')
